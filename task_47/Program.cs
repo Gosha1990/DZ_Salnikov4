@@ -19,7 +19,7 @@
     {
         for (int j = 0; j < cols; j++)
         {
-            matrix[i, j] = Math.Round(10 * (new Random().NextDouble()), 1);
+            matrix[i, j] = Math.Round(new Random().Next(-10, 10) * (new Random().NextDouble()), 1);
         }
     }
     return matrix;

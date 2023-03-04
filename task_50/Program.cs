@@ -19,9 +19,6 @@ Console.WriteLine("Вводим номер строки: rows ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Вводим номер столбца: cols ");
 int cols = Convert.ToInt32(Console.ReadLine());
-
-
-
 int[,] GetMatrix(int rows, int cols, int minValue, int maxValue)
 {
     int[,] matrix = new int[rows, cols];
@@ -30,13 +27,11 @@ int[,] GetMatrix(int rows, int cols, int minValue, int maxValue)
         for (int j = 0; j < cols; j++)
         {
             matrix[i, j] = new Random().Next(minValue, maxValue + 1);
-          
+
         }
     }
     return matrix;
 }
-
-
 void PrintMatrix(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -48,17 +43,14 @@ void PrintMatrix(int[,] matr)
         Console.WriteLine();
     }
 }
-
-
-
 int[,] resultMatrix = GetMatrix(3, 4, 0, 10);
 PrintMatrix(resultMatrix);
 
-    if (rows < 0 | rows > resultMatrix.GetLength(0) - 1 | cols < 0 | cols > resultMatrix.GetLength(1) - 1)
+if (rows < 0 | rows > resultMatrix.GetLength(0) - 1 | cols < 0 | cols > resultMatrix.GetLength(1) - 1)
 {
-Console.WriteLine("Элемент не существует  ");
+    Console.WriteLine("Элемент не существует  ");
 }
-    else
+else
 {
-    Console.WriteLine("Значение элемента массива = {0}",resultMatrix[rows, cols]);
+    Console.WriteLine("Значение элемента массива = {0}", resultMatrix[rows, cols]);
 }
